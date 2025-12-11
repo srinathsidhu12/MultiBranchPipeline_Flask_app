@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage ('build') {
             steps {
-                sh 'docker build -t "$IMAGE:$TAG" -t "$IMAGE:latest" .'     //Build a Docker image from Dockerfile in the current directory (.) and  Apply two tag
+                sh 'docker build -t "$IMAGE:$TAG" -t "$IMAGE:latest" ./python'     //Build a Docker image from Dockerfile in the current directory (.) and  Apply two tag
             }
         }
         stage ('push') {
