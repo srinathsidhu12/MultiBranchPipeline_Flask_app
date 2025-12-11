@@ -25,7 +25,7 @@ pipeline {
 stage('deploy') {
       steps {
         sh 'docker pull "$IMAGE:$TAG"'     //Pull the newly built version of the image
-        sh 'docker rm -f multibranchpipeline_python_flask_app || true'     // Remove old container if exists
+        sh 'docker rm -f flask_app || true'     // Remove old container if exists
         sh 'docker run -d --name flask_app -p 5000:5000 "$IMAGE:$TAG"'    //Run the new container
 
         //Create a deployment info file,Helpful for debugging & tracking which version is deployed
