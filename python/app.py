@@ -5,7 +5,8 @@ app = Flask(__name__)
 def hello():
     return jsonify(
         message="✨ Welcome to Multi_branch_pipeline_setup ✨",
-        tip="Built with Flask, shipped by Jenkins, running in Docker."
+        tip="Built with Flask, shipped by Jenkins, running in Docker.",
+        UI="This is new UI"
     )
 
 if __name__ == "__main__":
